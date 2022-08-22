@@ -5,3 +5,5 @@
 node_modules
 # System files
 *.log
+.nuxt/dist/server/server.js
+.nuxt/routes.json
