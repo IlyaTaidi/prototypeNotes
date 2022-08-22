@@ -7,3 +7,4 @@ node_modules
 *.log
 .nuxt/dist/server/server.js
 .nuxt/routes.json
+.vscode
