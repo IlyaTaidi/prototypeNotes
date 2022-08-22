@@ -13,8 +13,12 @@ export default {
 <template>
     <div class="dashboardContainer">
         <div class="dashboard">
-            <div class="navigationPanel"></div>
-            <div class="Editor-Panel"></div>
+            <div class="editorPanel"></div>
+            <div class="navigationPanel">
+                <div class="navButtons"></div>
+                <div class="navFilter"></div>
+                <div class="navContent"></div>
+            </div>
         </div>
     </div>
 </template>
@@ -44,16 +48,43 @@ export default {
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
-    grid-template-areas: "navigationPanel EditorPanel";
+    grid-template-areas:
+        "navigationPanel editorPanel";
     grid-area: dashboard;
 }
 
 .navigationPanel {
+    background: red;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 0.2fr 2.5fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "navButtons"
+        "navFilter"
+        "navContent";
     grid-area: navigationPanel;
 }
 
-.EditorPanel {
-    grid-area: EditorPanel;
+.navButtons {
+    background: blue;
+    grid-area: navButtons;
+}
+
+.navFilter {
+    background: green;
+    grid-area: navFilter;
+}
+
+.navContent {
+    background: orange;
+    grid-area: navContent;
+}
+
+.editorPanel {
+    background: purple;
+    grid-area: editorPanel;
 }
 
 .reset-body {
