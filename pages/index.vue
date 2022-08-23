@@ -1,6 +1,17 @@
 <script>
 import Editor from '~/components/Editor.vue'
+
 export default {
+    name: "App",
+    components: {
+        Editor,
+    },
+    data() {
+        return {
+            content:
+                "<p>Data Binding</p>",
+        };
+    },
     head() {
         return {
             bodyAttrs: {
@@ -8,14 +19,6 @@ export default {
             },
         };
     },
-    data() {
-        return {
-            content: '<p>Basic Data Binding</p>',
-        }
-    },
-    components: {
-        Editor
-    }
 };
 </script>
 
@@ -24,8 +27,6 @@ export default {
         <div class="dashboard">
             <client-only>
                 <editor class="editorPanel" v-model="content" />
-                <p>{{ content }}
-                </p>
             </client-only>
             <div class="navigationPanel">
                 <div class="navButtons">
@@ -66,7 +67,7 @@ export default {
                     Sort
                 </div>
                 <div class="navContent">
-                    Notebooks
+                    {{ content }}
                 </div>
             </div>
         </div>
