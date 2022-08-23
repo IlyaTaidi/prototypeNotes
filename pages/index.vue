@@ -1,5 +1,5 @@
 <script>
-import TiptapEditor from '~/components/Editor.vue'
+import Editor from '~/components/Editor.vue'
 export default {
     head() {
         return {
@@ -8,8 +8,13 @@ export default {
             },
         };
     },
+    data() {
+        return {
+            content: '<p>Basic Data Binding</p>',
+        }
+    },
     components: {
-        TiptapEditor
+        Editor
     }
 };
 </script>
@@ -18,7 +23,9 @@ export default {
     <div class="dashboardContainer">
         <div class="dashboard">
             <client-only>
-                <tiptap-editor class="editorPanel" />
+                <editor class="editorPanel" v-model="content" />
+                <p>{{ content }}
+                </p>
             </client-only>
             <div class="navigationPanel">
                 <div class="navButtons">
