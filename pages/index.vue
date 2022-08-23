@@ -1,4 +1,5 @@
 <script>
+import TiptapEditor from '~/components/Editor.vue'
 export default {
     head() {
         return {
@@ -7,13 +8,18 @@ export default {
             },
         };
     },
+    components: {
+        TiptapEditor
+    }
 };
 </script>
 
 <template>
     <div class="dashboardContainer">
         <div class="dashboard">
-            <div class="editorPanel"></div>
+            <client-only>
+                <tiptap-editor class="editorPanel" />
+            </client-only>
             <div class="navigationPanel">
                 <div class="navButtons">
                     <button class="navIcon">
