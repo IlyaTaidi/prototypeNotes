@@ -76,18 +76,14 @@ export default {
                 .replaceAll("<p>", "")
                 .replaceAll("</p>", "\n\n")
                 .replaceAll("<br>", "\n");
-
             Object.entries(this.replacementTags).forEach((tag) => {
                 const oldTag = tag[0];
                 const newTag = tag[1];
-
                 richText = richText
                     .replaceAll(`<${oldTag}>`, `<${newTag}>`)
                     .replaceAll(`</${oldTag}>`, `</${newTag}>`);
             });
-
             richText = richText.replace(/^\s+|\s+$/g, ""); // Trim to remove lasts \n
-
             return richText;
         },
     },
